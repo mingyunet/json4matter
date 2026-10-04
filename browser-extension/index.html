@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>json4matter</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-glyph">{}</span>
+        <span class="brand-name">json4matter</span>
+      </div>
+      <div class="header-actions">
+        <select id="themeSelect" class="select" title="主题">
+          <option value="green">清新绿</option>
+          <option value="paper">纸质黄</option>
+          <option value="white">清爽白</option>
+        </select>
+        <label class="fontsize" title="字号">
+          <span class="fontsize-label">A</span>
+          <input id="fontSize" class="fontsize-range" type="range" min="11" max="20" step="1" value="13">
+        </label>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <button id="btnFormat" class="btn btn-primary" title="格式化左侧源码">格式化</button>
+      <button id="btnMinify" class="btn" title="压缩（中文转 Unicode）">压缩</button>
+      <button id="btnMinifyRaw" class="btn" title="压缩（保留中文原文）">压缩原文</button>
+      <button id="btnCopy" class="btn" title="复制右侧格式化内容">复制</button>
+      <button id="btnExpand" class="btn" title="展开全部">展开全部</button>
+      <button id="btnCollapse" class="btn" title="折叠全部">折叠全部</button>
+      <button id="btnSample" class="btn" title="载入示例">示例</button>
+      <button id="btnClear" class="btn" title="清空">清空</button>
+      <label class="toggle" title="隐藏 null、空字符串、空数组、空对象">
+        <input type="checkbox" id="hideEmpty">
+        <span class="toggle-text">隐藏空值</span>
+      </label>
+      <div class="search">
+        <input id="searchBox" class="search-input" type="text" placeholder="搜索…" spellcheck="false">
+        <button id="btnSearchKey" class="btn btn-mini" title="按 key 搜索">键</button>
+        <button id="btnSearchValue" class="btn btn-mini" title="按值搜索">值</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <section class="pane pane-source">
+        <div class="pane-title">
+          <span>源码</span>
+          <span class="pane-hint">粘贴即自动解析（280ms 防抖）</span>
+        </div>
+        <textarea id="input" class="source" spellcheck="false"
+          placeholder="在此粘贴 JSON，或接口日志里被序列化/转义的 JSON 字符串（如 &quot;{\&quot;code\&quot;:200}&quot;），会自动解包格式化…"></textarea>
+      </section>
+
+      <section class="pane pane-tree">
+        <div class="pane-title">
+          <span>格式化</span>
+          <span class="pane-hint" id="treeMeta"></span>
+        </div>
+        <div id="tree" class="tree" tabindex="0"></div>
+        <div id="emptyHint" class="empty-hint">
+          <div class="empty-mark">{ }</div>
+          <div class="empty-title">粘贴 JSON 即可格式化</div>
+          <div class="empty-sub">支持接口日志里的转义 JSON 字符串，自动解包多层 · 点击节点高亮整棵子树</div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="statusbar">
+      <span id="statusText" class="status-text status-neutral">就绪 — 在左侧粘贴 JSON 后自动解析</span>
+      <span id="sizeText" class="size-text"></span>
+    </footer>
+
+    <div id="toast" class="toast">✔ 复制成功</div>
+  </div>
+
+  <script src="js/parser.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
