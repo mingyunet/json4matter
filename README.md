@@ -4,7 +4,7 @@ Windows 桌面 JSON 格式化查看器 — WPF + .NET 8，单文件 exe，启动
 
 ## 下载
 
-**[⬇ 下载 json4matter_0.0.1.exe](https://github.com/Memorry0/json4matter/raw/main/json4matter_0.0.1.exe)**（约 300KB）
+**[⬇ 下载 json4matter\_0.0.1.exe](https://github.com/Memorry0/json4matter/raw/main/json4matter_0.0.1.exe)**（约 300KB）
 
 - Windows 10/11 x64，绿色单文件、免安装、双击即用
 - 需已安装 [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)（仅首次）
@@ -12,15 +12,19 @@ Windows 桌面 JSON 格式化查看器 — WPF + .NET 8，单文件 exe，启动
 
 ## 浏览器扩展版（新）
 
-同一套 JSON 格式化能力的浏览器版本（Chrome / Edge，MV3，免安装打包、零依赖）：
-**专门用来对付接口日志里被序列化的 JSON 字符串** —— 复制出来贴进去，自动剥掉转义、树形着色查看。
+同一套 JSON 格式化能力的浏览器版本（Chrome / Edge，MV3，免安装打包、零依赖）：  
+**专门用来对付接口日志里被序列化的 JSON 字符串** —— 复制出来贴进去，自动剥掉转义、树形着色查看。  
 支持弹窗与侧边栏两种打开方式，以及页面右键「用 json4matter 格式化选中内容」。
 
 详见 [browser-extension/README.md](browser-extension/README.md)。
 
 ## 界面预览
 
-![主界面](docs/screenshot-browser-extension)
+![客户端主界面](docs/screenshot-main.png)
+
+![客户端设置界面](docs/screenshot-settings.png)
+
+![浏览器插件主界面](docs/screenshot-browser-extension.png)
 
 ## 功能
 
